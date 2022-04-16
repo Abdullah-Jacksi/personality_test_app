@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:personality_test_app/core/data/questions/questions_repository.dart';
 import 'package:personality_test_app/core/models/question_model.dart';
 
@@ -9,7 +11,7 @@ class MockQuestionsRepository extends QuestionsRepository {
       await Future.delayed(const Duration(seconds: 2));
       return mockData;
     } catch (error) {
-      print(error.toString());
+      log(error.toString());
     }
     return null;
   }
