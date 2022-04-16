@@ -15,7 +15,7 @@ class QuestionModel {
   );
 
   Map<String, dynamic> toJson() => {
-    "question": question ?? "null",
-    "answers": answers == null ? null : List<dynamic>.from(answers!.map((x) => x)),
+    "question": question ?? "question",
+    "answers": answers == null ? [] : List<dynamic>.from(answers!.map((x) => x)),
   };
 }
