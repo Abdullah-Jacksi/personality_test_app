@@ -4,7 +4,7 @@ import 'package:personality_test_app/core/models/question_model.dart';
 class MockQuestionsRepository extends QuestionsRepository {
 
   @override
-  Future<List<QuestionModel>?> getQuestions() async {
+  Future<List<QuestionModel>?> fetchQuestions() async {
     try {
       await Future.delayed(const Duration(seconds: 2));
       return mockData;
