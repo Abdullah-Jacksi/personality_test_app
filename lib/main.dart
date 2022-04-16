@@ -10,15 +10,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: providers,
-        child:  MaterialApp(
-        title: 'Personality Test',
-        debugShowCheckedModeBanner: false,
-        initialRoute: RoutePaths.splash,
-        routes: AppRouter.routes(),
-    );
+        child: MaterialApp(
+          title: 'Personality Test',
+          debugShowCheckedModeBanner: false,
+          initialRoute: RoutePaths.splash,
+          routes: AppRouter.routes(),
+        ));
   }
 }
