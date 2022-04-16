@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-class BaseModel with ChangeNotifier {
+class BaseViewModel with ChangeNotifier {
   bool _busy = false;
 
   bool get busy => _busy;

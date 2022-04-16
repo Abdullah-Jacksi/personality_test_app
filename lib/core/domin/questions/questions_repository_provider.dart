@@ -7,7 +7,7 @@ class QuestionsRepositoryProvider with ChangeNotifier {
 
   List<QuestionModel>? _questions;
 
-  List<QuestionModel>? get getQuestions => _questions;
+  List<QuestionModel>? get questions => _questions;
 
   Future<bool> fetchQuestions() async {
     final apiResponse = await _mockQuestionsRepository.fetchQuestions();
