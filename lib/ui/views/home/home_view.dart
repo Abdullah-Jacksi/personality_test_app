@@ -1,9 +1,11 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:personality_test_app/core/constants/routes.dart';
 import 'package:personality_test_app/core/domin/questions/questions_repository_provider.dart';
 import 'package:personality_test_app/core/view_models/home/home_view_model.dart';
 import 'package:personality_test_app/ui/views/base/base_view.dart';
 import 'package:personality_test_app/ui/views/widgets/answer_item_widget.dart';
+import 'package:personality_test_app/ui/views/widgets/answers_column_widget.dart';
 import 'package:personality_test_app/ui/views/widgets/custom_button_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -21,6 +23,9 @@ class HomeView extends StatelessWidget {
         if (model.questions != null && model.questions!.isEmpty) {
           await model.refresh();
         }
+        model.initialCacheAnswersList();
+        model.setSelectedAnswerIndex(-1);
+        model.setSelectedQuestionIndex(0);
       },
       builder: (BuildContext context, HomeViewModel model, Widget? child) =>
           Scaffold(
@@ -38,62 +43,24 @@ class HomeView extends StatelessWidget {
                         children: [
                           Text(model.questions![model.getSelectedQuestionIndex]
                               .question),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          AnswerItemWidget(
-                            selectedAnswerIndex: model.getSelectedAnswerIndex,
-                            thisItemIndex: 0,
-                            letter: "A",
-                            answer: model
-                                .questions![model.getSelectedQuestionIndex]
-                                .answers![0],
-                            onTap: () {
-                              model.setSelectedAnswerIndex(0);
-                            },
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          AnswerItemWidget(
-                            selectedAnswerIndex: model.getSelectedAnswerIndex,
-                            thisItemIndex: 1,
-                            letter: "B",
-                            answer: model
-                                .questions![model.getSelectedQuestionIndex]
-                                .answers![1],
-                            onTap: () {
-                              model.setSelectedAnswerIndex(1);
-                            },
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          AnswerItemWidget(
-                            selectedAnswerIndex: model.getSelectedAnswerIndex,
-                            thisItemIndex: 2,
-                            letter: "C",
-                            answer: model
-                                .questions![model.getSelectedQuestionIndex]
-                                .answers![2],
-                            onTap: () {
-                              model.setSelectedAnswerIndex(2);
-                            },
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          AnswerItemWidget(
-                            selectedAnswerIndex: model.getSelectedAnswerIndex,
-                            thisItemIndex: 3,
-                            letter: "D",
-                            answer: model
-                                .questions![model.getSelectedQuestionIndex]
-                                .answers![3],
-                            onTap: () {
-                              model.setSelectedAnswerIndex(3);
-                            },
-                          ),
+                          const SizedBox(height: 20),
+                          AnswersColumnWidget(
+                              selectedAnswerIndex: model.getSelectedAnswerIndex,
+                              answers: model
+                                  .questions![model.getSelectedQuestionIndex]
+                                  .answers!,
+                              onTapFirstAnswer: () {
+                                model.setSelectedAnswerIndex(0);
+                              },
+                              onTapSecondAnswer: () {
+                                model.setSelectedAnswerIndex(1);
+                              },
+                              onTapThirdAnswer: () {
+                                model.setSelectedAnswerIndex(2);
+                              },
+                              onTapFourthAnswer: () {
+                                model.setSelectedAnswerIndex(3);
+                              }),
                           const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -102,32 +69,25 @@ class HomeView extends StatelessWidget {
                                   ? Container()
                                   : Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsets.only(right: 12.0),
+                                        padding:
+                                            const EdgeInsets.only(right: 12.0),
                                         child: CustomButtonWidget(
                                           isPreviousButton: true,
                                           onPressed: () {
-                                            log(model.getSelectedQuestionIndex
-                                                .toString());
-                                            if (model.getSelectedQuestionIndex >
-                                                0) {
-                                              model.setSelectedQuestionIndex(
-                                                  model.getSelectedQuestionIndex -
-                                                      1);
-                                            }
+                                            model.previousQuestion();
                                           },
                                         ),
                                       ),
                                     ),
                               Expanded(
                                 child: CustomButtonWidget(
+                                  isLastQuestion: (model.getSelectedQuestionIndex + 1) == model.questions!.length ? true : false,
+                                  isNotSelectedAnswer:
+                                      model.getSelectedAnswerIndex == -1
+                                          ? true
+                                          : false,
                                   onPressed: () {
-                                    if ((model.getSelectedQuestionIndex + 1) ==
-                                        model.questions!.length) {
-                                      log("end of questions");
-                                    } else {
-                                      model.setSelectedQuestionIndex(
-                                          model.getSelectedQuestionIndex + 1);
-                                    }
+                                    model.nextQuestion(context);
                                   },
                                 ),
                               ),
@@ -141,4 +101,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
