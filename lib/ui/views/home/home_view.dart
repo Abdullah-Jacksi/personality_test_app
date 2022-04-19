@@ -35,9 +35,12 @@ class _HomeViewState extends State<HomeView> {
       builder: (BuildContext context, HomeViewModel model, Widget? child) =>
           Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.indigo,
           title: const Text("Personality Test"),
           centerTitle: true,
-          leading: Container(),
+          // leading: Container(),
+          automaticallyImplyLeading: false,
+
         ),
         body: SafeArea(
           child: Center(
