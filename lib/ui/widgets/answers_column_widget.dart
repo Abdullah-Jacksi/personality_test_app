@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personality_test_app/ui/views/widgets/answer_item_widget.dart';
+import 'package:personality_test_app/ui/widgets/answer_item_widget.dart';
 
 class AnswersColumnWidget extends StatelessWidget {
   const AnswersColumnWidget({

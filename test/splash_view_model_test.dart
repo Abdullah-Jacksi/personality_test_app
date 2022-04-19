@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:personality_test_app/core/data/questions/local_questions_repository.dart';
 import 'package:personality_test_app/core/data/questions/questions_repository.dart';
-import 'package:personality_test_app/core/domin/questions/questions_repository_provider.dart';
+import 'package:personality_test_app/core/domain/questions/questions_repository_provider.dart';
 import 'package:personality_test_app/core/models/question_model.dart';
 import 'package:personality_test_app/core/view_models/home/home_view_model.dart';
 import 'package:personality_test_app/core/view_models/splash_view_model/splash_view_model.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personality_test_app/config/router_config.dart';
 import 'package:personality_test_app/core/constants/routes.dart';
 import 'package:personality_test_app/core/data/questions/local_questions_repository.dart';
-import 'package:personality_test_app/core/domin/questions/questions_repository_provider.dart';
+import 'package:personality_test_app/core/domain/questions/questions_repository_provider.dart';
 import 'package:personality_test_app/core/view_models/home/home_view_model.dart';
 import 'package:personality_test_app/core/view_models/result/result_view_model.dart';
 import 'package:personality_test_app/core/view_models/splash_view_model/splash_view_model.dart';

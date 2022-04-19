@@ -2,8 +2,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:personality_test_app/core/view_models/home/home_view_model.dart';
 import 'package:personality_test_app/ui/utils/styles.dart';
-import 'package:personality_test_app/ui/views/widgets/answers_column_widget.dart';
-import 'package:personality_test_app/ui/views/widgets/custom_button_widget.dart';
+import 'package:personality_test_app/ui/widgets/answers_column_widget.dart';
+import 'package:personality_test_app/ui/widgets/custom_button_widget.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatefulWidget {

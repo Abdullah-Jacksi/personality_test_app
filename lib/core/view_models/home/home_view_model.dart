@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personality_test_app/core/constants/routes.dart';
-import 'package:personality_test_app/core/domin/questions/questions_repository_provider.dart';
+import 'package:personality_test_app/core/domain/questions/questions_repository_provider.dart';
 import 'package:personality_test_app/core/models/question_model.dart';
 import 'package:personality_test_app/core/view_models/base/base_view_models.dart';
 
