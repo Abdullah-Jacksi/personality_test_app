@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personality_test_app/ui/utils/styles.dart';
 
 class AnswerItemWidget extends StatelessWidget {
   AnswerItemWidget({
@@ -49,9 +50,8 @@ class AnswerItemWidget extends StatelessWidget {
               child: Text(
                 answer,
                 style: selectedAnswerIndex == thisItemIndex
-                    ? const TextStyle(fontWeight: FontWeight.w800)
-                    : const TextStyle(
-                    fontWeight: FontWeight.w400),
+                    ? selectedAnswerTextStyle
+                    : unSelectedAnswerTextStyle,
               ),
             ),
           ],
