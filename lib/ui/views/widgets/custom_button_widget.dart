@@ -40,14 +40,17 @@ class CustomButtonWidget extends StatelessWidget {
                   backgroundColor: isNotSelectedAnswer
                       ? MaterialStateProperty.all<Color>(Colors.grey)
                       : isLastQuestion
-                        ? MaterialStateProperty.all<Color>(Colors.red)
-                        : MaterialStateProperty.all<Color>(Colors.indigo),
+                          ? MaterialStateProperty.all<Color>(Colors.red)
+                          : MaterialStateProperty.all<Color>(Colors.indigo),
                 ),
           onPressed: isNotSelectedAnswer ? null : onPressed,
-          child: Text(text ,
-              style: isPreviousButton ?  previousQuestionButtonTextStyle  : nextQuestionButtonTextStyle,
-              // TextStyle(
-              //     color: isPreviousButton ? Colors.indigo : Colors.white)
+          child: Text(
+            text,
+            style: isPreviousButton
+                ? previousQuestionButtonTextStyle
+                : nextQuestionButtonTextStyle,
+            // TextStyle(
+            //     color: isPreviousButton ? Colors.indigo : Colors.white)
           )),
     );
   }

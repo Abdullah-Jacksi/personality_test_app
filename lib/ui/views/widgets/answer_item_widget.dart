@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personality_test_app/ui/utils/styles.dart';
 
 class AnswerItemWidget extends StatelessWidget {
-  AnswerItemWidget({
+  const AnswerItemWidget({
     required this.onTap,
     required this.selectedAnswerIndex,
     required this.thisItemIndex,

@@ -1,8 +1,7 @@
-
 import 'package:personality_test_app/core/data/questions/questions_repository.dart';
 import 'package:personality_test_app/core/models/question_model.dart';
 
-class APIQuestionsRepository extends QuestionsRepository{
+class APIQuestionsRepository extends QuestionsRepository {
   @override
   Future<List<QuestionModel>?> fetchQuestions() async {
     return null;

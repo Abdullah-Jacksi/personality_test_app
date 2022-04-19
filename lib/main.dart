@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:personality_test_app/config/router_config.dart';
 import 'package:personality_test_app/core/constants/routes.dart';
@@ -36,8 +35,6 @@ class MyApp extends StatelessWidget {
                         homeViewModel:
                             Provider.of<HomeViewModel>(context, listen: false)),
                     update: (context, homeViewModel, resultViewModel) {
-                      log("update + " +
-                          homeViewModel.getSelectedQuestionIndex.toString());
                       return ResultViewModel(homeViewModel: homeViewModel);
                     }),
               ],

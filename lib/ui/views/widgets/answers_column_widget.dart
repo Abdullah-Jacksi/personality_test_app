@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personality_test_app/core/view_models/home/home_view_model.dart';
 import 'package:personality_test_app/ui/views/widgets/answer_item_widget.dart';
 
 class AnswersColumnWidget extends StatelessWidget {
-  AnswersColumnWidget({
+  const AnswersColumnWidget({
     Key? key,
     required this.selectedAnswerIndex,
     required this.answers,
@@ -19,7 +18,6 @@ class AnswersColumnWidget extends StatelessWidget {
   final GestureTapCallback onTapSecondAnswer;
   final GestureTapCallback onTapThirdAnswer;
   final GestureTapCallback onTapFourthAnswer;
-
 
   @override
   Widget build(BuildContext context) {

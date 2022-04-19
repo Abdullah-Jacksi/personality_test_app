@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView>
   @override
   void initState() {
     super.initState();
-    Future.microtask( () => context.read<SplashViewModel>().onReady(context));
+    Future.microtask(() => context.read<SplashViewModel>().onReady(context));
     controller =
         AnimationController(duration: const Duration(seconds: 1), vsync: this);
     controller?.repeat(reverse: true);
@@ -32,22 +32,21 @@ class _SplashViewState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     return Consumer<SplashViewModel>(
-      builder: (BuildContext context, SplashViewModel model, Widget? child) =>
-       Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Center(
-          child: Opacity(
-            opacity: controller?.value as double,
-            child: Image.asset(
-              "assets/logo.png",
-              width: MediaQuery.of(context).size.width * 0.6,
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-        ),
-      ),
-    )
-    );
+        builder: (BuildContext context, SplashViewModel model, Widget? child) =>
+            Scaffold(
+              backgroundColor: Colors.white,
+              body: SafeArea(
+                child: Center(
+                  child: Opacity(
+                    opacity: controller?.value as double,
+                    child: Image.asset(
+                      "assets/logo.png",
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                ),
+              ),
+            ));
   }
 }

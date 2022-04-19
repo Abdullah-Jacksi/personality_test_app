@@ -3,7 +3,8 @@ import 'package:personality_test_app/core/data/questions/mock_questions_reposito
 import 'package:personality_test_app/core/models/question_model.dart';
 
 class QuestionsRepositoryProvider with ChangeNotifier {
-  final MockQuestionsRepository _mockQuestionsRepository = MockQuestionsRepository();
+  final MockQuestionsRepository _mockQuestionsRepository =
+      MockQuestionsRepository();
 
   List<QuestionModel>? _questions;
 
@@ -18,5 +19,4 @@ class QuestionsRepositoryProvider with ChangeNotifier {
     }
     return false;
   }
-
 }
