@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:personality_test_app/core/data/questions/questions_repository.dart';
 import 'package:personality_test_app/core/models/question_model.dart';
 
-class MockQuestionsRepository extends QuestionsRepository {
+class LocalQuestionsRepository extends QuestionsRepository {
   @override
   Future<List<QuestionModel>?> fetchQuestions() async {
     try {

@@ -10,10 +10,14 @@ class SplashViewModel extends BaseViewModel {
 
   final QuestionsRepositoryProvider _questionsRepositoryProvider;
 
-  Future<void> onReady(BuildContext context) async {
+  Future<void> onReady(BuildContext context)  async {
+    getQuestions();
+    goTo(context, path: RoutePaths.home, pushAndReplace: true);
+  }
+
+  getQuestions () async{
     setBusy(true);
     await _questionsRepositoryProvider.fetchQuestions();
     setBusy(false);
-    goTo(context, path: RoutePaths.home, pushAndReplace: true);
   }
 }
