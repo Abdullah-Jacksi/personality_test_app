@@ -1,4 +1,4 @@
-# Mobile Code Challenge Flutter Solution
+# Personality test Flutter app
 
 <img src="https://img.shields.io/badge/made%20with-dart-blue.svg" alt="made with dart">
 
