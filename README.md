@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/badge/made%20with-dart-blue.svg" alt="made with dart">
 
-The task is to implement a personality test app to let the user find out what personality type he is if he is an introvert or an extrovert
+The app is a personality test app to let the user find out what personality type he is if he is an introvert or an extrovert
 
 ## Screenshot
 <img src="https://github.com/Abdullah-Jacksi/personality_test_app/blob/master/assets/screenshot.png" width="300" />
